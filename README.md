@@ -1,4 +1,4 @@
-QS-Tutorial Remake – FiveM
+🎓 QS-Tutorial Remake
 
 Remake optimizado y reestructurado del sistema QS-Tutorial para servidores de FiveM.
 
