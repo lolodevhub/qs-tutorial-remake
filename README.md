@@ -1,6 +1,8 @@
-🎓 QS-Tutorial Remake
+🎓 # QS-Tutorial Remake
 
-Remake optimizado y reestructurado del sistema QS-Tutorial para servidores de FiveM.
+Remake optimizado del sistema de tutorial para servidores de FiveM.
+
+Este proyecto reestructura el clásico QS-Tutorial con mejoras en organización, rendimiento y sistema de audio dinámico, manteniendo compatibilidad con servidores RP modernos.
 
 Este proyecto mejora la organización del código, el sistema de escenas y agrega audio dinámico sin romper la lógica original del recurso.
 
