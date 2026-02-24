@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="tutorial-container">
+        <img id="tutorial-image" src="" alt="altimg">
+        <div id="tutorial-text"></div>
+        <button id="continue-button" style="display: none;">Continue</button>
+    </div>
+    <!-- Sistema de Audio Dinámico -->
+    <audio id="sceneAudio" preload="auto"></audio>
+
+    <!-- Cargar audio-manager ANTES de script.js para interceptar eventos -->
+    <script src="audio-manager.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

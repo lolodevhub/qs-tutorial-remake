@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --d: 5000ms;
+    --angle: 90deg;
+    --gradX: 100%;
+    --gradY: 50%;
+    --c1: rgba(162, 0, 255, 1);
+    --c2: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* CONTENEDOR PRINCIPAL */
+#tutorial-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 20vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(162, 0, 255, 0.4));
+    color: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2vh 3vw;
+    border-radius: 1vw;
+    overflow: visible;
+}
+
+/* BOTÓN MORADO NEÓN */
+#continue-button {
+    position: absolute;
+    left: 84%;
+    top: 84%;
+    transform: translate(-50%, -50%);
+    display: none;
+    font-size: 1.8vh;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    width: 14vw;
+    height: 5vh;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background: radial-gradient(circle, #4B0082 0%, #A200FF 100%);
+    box-shadow: 0 0 25px rgba(162, 0, 255, 0.9);
+    border: 3px solid rgba(200, 0, 255, 1);
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+}
+
+/* BORDE ANIMADO */
+#continue-button::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 10px;
+    z-index: -1;
+    background: conic-gradient(
+        from var(--angle),
+        var(--c2),
+        var(--c1) 0.1turn,
+        var(--c1) 0.15turn,
+        var(--c2) 0.25turn
+    );
+    animation: borderRotate var(--d) linear infinite forwards;
+    mask-composite: exclude;
+    margin: 4px;
+}
+
+#continue-button:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 0 35px rgba(200, 0, 255, 1);
+}
+
+/* IMAGEN */
+#tutorial-image {
+    width: 25vw;
+    height: auto;
+    border-radius: 1vw;
+    object-fit: cover;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: -10vh;
+    left: 2vw;
+}
+
+/* CONTENIDO */
+#tutorial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* TEXTO */
+#tutorial-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60vw;
+    height: auto;
+    font-size: 2.2vh;
+    font-weight: bold;
+    padding: 1vh 2vw;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 15px rgba(162, 0, 255, 0.9);
+}
+
+/* ELEMENTOS OCULTOS */
+#tutorial-image,
+#tutorial-text {
+    display: none;
+}
+
+/* ANIMACIONES */
+@keyframes borderRotate {
+    100% {
+        --angle: 450deg;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+}
+
+@property --gradX {
+    syntax: '<percentage>';
+    initial-value: 50%;
+    inherits: true;
+}
+
+@property --gradY {
+    syntax: '<percentage>';
+    initial-value: 0%;
+    inherits: true;
+}
+
+/* EFECTO VIBRACIÓN */
+@keyframes vibrate {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-8px, 8px); }
+    50% { transform: translate(8px, -8px); }
+    75% { transform: translate(-8px, -8px); }
+    100% { transform: translate(0, 0); }
+}
+
+.vibrate {
+    animation: vibrate 0.2s ease-in-out 3;
+}
