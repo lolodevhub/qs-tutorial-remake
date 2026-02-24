@@ -1,4 +1,4 @@
-🎓 # QS-Tutorial Remake
+🎓 QS-Tutorial Remake
 
 Remake optimizado del sistema de tutorial para servidores de FiveM.
 
